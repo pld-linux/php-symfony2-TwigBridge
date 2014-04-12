@@ -3,25 +3,28 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Symfony2 Twig Bridge
 Name:		php-symfony2-TwigBridge
-Version:	2.3.4
+Version:	2.4.3
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	4b3a0b4d581ae87669b289448f5ac497
+# Source0-md5:	00b65709b477c3c83ce3dbc1bd1c1450
 URL:		https://github.com/symfony/TwigBridge
 BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
+Requires:	php(pcre)
+Requires:	php(spl)
 Requires:	php-channel(pear.symfony.com)
 Requires:	php-pear >= 4:1.3.10
-#Requires:	php-twig-Twig >= ~1.11
+Requires:	php-twig-Twig >= 1.11
 Suggests:	php-symfony2-Form
 Suggests:	php-symfony2-HttpKernel
 Suggests:	php-symfony2-Routing
 Suggests:	php-symfony2-Security
+Suggests:	php-symfony2-Templating
 Suggests:	php-symfony2-Translation
 Suggests:	php-symfony2-Yaml
 BuildArch:	noarch
