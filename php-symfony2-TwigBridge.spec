@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Symfony2 Twig Bridge
 Name:		php-symfony2-TwigBridge
-Version:	2.4.3
+Version:	2.4.4
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	00b65709b477c3c83ce3dbc1bd1c1450
+# Source0-md5:	5f06c3267d33c73e6f799dedeb8ff24a
 URL:		https://github.com/symfony/TwigBridge
 BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR
