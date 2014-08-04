@@ -3,21 +3,19 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Symfony2 Twig Bridge
 Name:		php-symfony2-TwigBridge
-Version:	2.4.4
+Version:	2.4.8
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
-Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	5f06c3267d33c73e6f799dedeb8ff24a
+Source0:	https://github.com/symfony/%{pearname}/archive/v%{version}/%{pearname}-%{version}.tar.gz
+# Source0-md5:	92ee63ca7f578c43b9a066d6d7e28859
 URL:		https://github.com/symfony/TwigBridge
-BuildRequires:	php-channel(pear.symfony.com)
-BuildRequires:	php-pear-PEAR
+BuildRequires:	phpab
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
 Requires:	php(pcre)
 Requires:	php(spl)
-Requires:	php-channel(pear.symfony.com)
 Requires:	php-pear >= 4:1.3.10
 Requires:	php-twig-Twig >= 1.11
 Suggests:	php-symfony2-Form
@@ -34,27 +32,23 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Provides integration for Twig with various Symfony2 components.
 
 %prep
-%pear_package_setup
+%setup -q -n %{pearname}-%{version}
 
-# no packaging of tests
-mv .%{php_pear_dir}/Symfony/Bridge/Twig/Tests .
-mv .%{php_pear_dir}/Symfony/Bridge/Twig/phpunit.xml.dist .
-
-# fixups
-mv docs/%{pearname}/Symfony/Bridge/Twig/* .
+%build
+phpab -n -e '*/Tests/*' -o autoload.php .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}
-%pear_package_install
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Bridge/Twig
+cp -a *.php */ $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Bridge/Twig
+rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Bridge/Twig/Tests
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGELOG.md LICENSE README.md install.log
-%{php_pear_dir}/.registry/.channel.*/*.reg
+%doc CHANGELOG.md LICENSE README.md
 %dir %{php_pear_dir}/Symfony/Bridge/Twig
 %{php_pear_dir}/Symfony/Bridge/Twig/*.php
 %{php_pear_dir}/Symfony/Bridge/Twig/Extension
