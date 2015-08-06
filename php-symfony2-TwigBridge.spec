@@ -54,6 +54,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc CHANGELOG.md LICENSE README.md
 %dir %{php_pear_dir}/Symfony/Bridge/Twig
 %{php_pear_dir}/Symfony/Bridge/Twig/*.php
+%{php_pear_dir}/Symfony/Bridge/Twig/Command
+%{php_pear_dir}/Symfony/Bridge/Twig/DataCollector
 %{php_pear_dir}/Symfony/Bridge/Twig/Extension
 %{php_pear_dir}/Symfony/Bridge/Twig/Form
 %{php_pear_dir}/Symfony/Bridge/Twig/Node
