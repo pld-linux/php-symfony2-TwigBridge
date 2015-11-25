@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{package} - Symfony2 Twig Bridge
 Name:		php-symfony2-TwigBridge
-Version:	2.7.5
+Version:	2.7.7
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	204425bd06242f221bb96d3e6ad77068
+# Source0-md5:	85938c0761fa29e90ff410cad9c84125
 URL:		https://github.com/symfony/TwigBridge
 BuildRequires:	phpab
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -17,7 +17,7 @@ Requires:	php(core) >= %{php_min_version}
 Requires:	php(pcre)
 Requires:	php(spl)
 Requires:	php-pear >= 4:1.3.10
-Requires:	php-twig-Twig >= 1.20
+Requires:	php-twig-Twig >= 1.23
 Suggests:	php-symfony2-Asset
 Suggests:	php-symfony2-Finder
 Suggests:	php-symfony2-Form
@@ -38,7 +38,7 @@ Provides integration for Twig with various Symfony2 components.
 %setup -q -n twig-bridge-%{version}
 
 %build
-phpab -n -e '*/Tests/*' -o autoloader.php .
+phpab -n -e '*/Tests/*' -o autoload.php .
 
 %install
 rm -rf $RPM_BUILD_ROOT
