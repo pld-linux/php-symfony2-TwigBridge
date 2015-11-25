@@ -42,9 +42,9 @@ phpab -n -e '*/Tests/*' -o autoload.php .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Bridge/Twig
-cp -a *.php */ $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Bridge/Twig
-rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Bridge/Twig/Tests
+install -d $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Bridge/Twig
+cp -a *.php */ $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Bridge/Twig
+rm -r $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Bridge/Twig/Tests
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -52,14 +52,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGELOG.md LICENSE README.md
-%dir %{php_pear_dir}/Symfony/Bridge/Twig
-%{php_pear_dir}/Symfony/Bridge/Twig/*.php
-%{php_pear_dir}/Symfony/Bridge/Twig/Command
-%{php_pear_dir}/Symfony/Bridge/Twig/DataCollector
-%{php_pear_dir}/Symfony/Bridge/Twig/Extension
-%{php_pear_dir}/Symfony/Bridge/Twig/Form
-%{php_pear_dir}/Symfony/Bridge/Twig/Node
-%{php_pear_dir}/Symfony/Bridge/Twig/NodeVisitor
-%{php_pear_dir}/Symfony/Bridge/Twig/Resources
-%{php_pear_dir}/Symfony/Bridge/Twig/TokenParser
-%{php_pear_dir}/Symfony/Bridge/Twig/Translation
+%dir %{php_data_dir}/Symfony/Bridge/Twig
+%{php_data_dir}/Symfony/Bridge/Twig/*.php
+%{php_data_dir}/Symfony/Bridge/Twig/Command
+%{php_data_dir}/Symfony/Bridge/Twig/DataCollector
+%{php_data_dir}/Symfony/Bridge/Twig/Extension
+%{php_data_dir}/Symfony/Bridge/Twig/Form
+%{php_data_dir}/Symfony/Bridge/Twig/Node
+%{php_data_dir}/Symfony/Bridge/Twig/NodeVisitor
+%{php_data_dir}/Symfony/Bridge/Twig/Resources
+%{php_data_dir}/Symfony/Bridge/Twig/TokenParser
+%{php_data_dir}/Symfony/Bridge/Twig/Translation
