@@ -11,12 +11,10 @@ Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{
 # Source0-md5:	85938c0761fa29e90ff410cad9c84125
 URL:		https://github.com/symfony/TwigBridge
 BuildRequires:	phpab
-BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
 Requires:	php(pcre)
 Requires:	php(spl)
-Requires:	php-pear >= 4:1.3.10
 Requires:	php-twig-Twig >= 1.23
 Suggests:	php-symfony2-Asset
 Suggests:	php-symfony2-Finder
