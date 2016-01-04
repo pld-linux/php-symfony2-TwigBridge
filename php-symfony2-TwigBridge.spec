@@ -15,6 +15,7 @@ BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
 Requires:	php(pcre)
 Requires:	php(spl)
+Requires:	php-dirs >= 1.6
 Requires:	php-twig-Twig >= 1.23
 Suggests:	php-symfony2-Asset
 Suggests:	php-symfony2-Finder
