@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{package} - Symfony2 Twig Bridge
 Name:		php-symfony2-TwigBridge
-Version:	2.7.7
+Version:	2.7.8
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	85938c0761fa29e90ff410cad9c84125
+# Source0-md5:	5384373c42e50d24dd4d8fac745de8ab
 URL:		https://github.com/symfony/TwigBridge
 BuildRequires:	phpab
 BuildRequires:	rpmbuild(macros) >= 1.610
