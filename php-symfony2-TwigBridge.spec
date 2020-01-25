@@ -1,6 +1,5 @@
 %define		package	TwigBridge
 %define		php_min_version 5.3.9
-%include	/usr/lib/rpm/macros.php
 Summary:	%{package} - Symfony2 Twig Bridge
 Name:		php-symfony2-TwigBridge
 Version:	2.7.8
